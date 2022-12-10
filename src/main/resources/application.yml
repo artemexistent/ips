@@ -1,0 +1,20 @@
+server:
+  port: 8181
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: none
+        show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://db:5432/barber_shop
+    username: postgres
+    password: password
+    initialize: true
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:database/creatingTablesAndInserting.sql
+      continue-on-error: true
